@@ -9,6 +9,7 @@ import UIKit
 
 class PmViewController: UIViewController {
 
+    var delegate : viewControllerDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
 

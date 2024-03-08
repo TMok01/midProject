@@ -8,7 +8,7 @@
 import UIKit
 
 class LeaderboardViewController: UIViewController {
-
+    var delegate : viewControllerDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
 

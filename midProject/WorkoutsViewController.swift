@@ -8,13 +8,13 @@
 import UIKit
 
 class WorkoutsViewController: UIViewController {
-
+    
+    var delegate : viewControllerDelegate!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        // Do any additional setup after loading the view.
     }
     
-
-   
-}
+    
+    }
