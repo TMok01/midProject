@@ -15,7 +15,7 @@ class AccountViewController: UIViewController {
     var check = ""
     var delegate : viewControllerDelegate!
     
-    var account = Classes(name: "John Doe", bench: 0, squat: 0, deadlift: 0, clean: 0, username: "", password: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,19 +25,23 @@ class AccountViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         resultOutlet.text = delegate.getCheck()
-        print(delegate.getCheck())
+        nameOutlet.text = delegate.accountAccess().name
+        usernameOutlet.text = delegate.accountAccess().username
+        passwordOutlet.text = delegate.accountAccess().password
     }
     
     
     
     @IBAction func addedAction(_ sender: Any) {
-        
-        account = Classes(name: nameOutlet.text!, bench: 0, squat: 0, deadlift: 0, clean: 0, username: usernameOutlet.text!, password: passwordOutlet.text!)
+        delegate.updateAccountInfo(name: nameOutlet.text!, username: usernameOutlet.text!, password: passwordOutlet.text!)
+        //print(delegate.accountAccess())
+        //account = User(name: nameOutlet.text!, bench: 0, squat: 0, deadlift: 0, clean: 0, username: usernameOutlet.text!, password: passwordOutlet.text!)
         delegate.accountCreated(answer: true)
         resultOutlet.text = "Account Created!"
         delegate.updateCheck(string: "Account Created")
-         
     }
     
-   
+    
+    
+    
 }

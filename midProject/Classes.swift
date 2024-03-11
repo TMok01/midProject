@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class Classes {
+public class User{
     
     var name: String
         var bench: Int

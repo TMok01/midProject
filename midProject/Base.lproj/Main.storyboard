@@ -103,6 +103,9 @@
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="ine-kl-qok"/>
+                    <connections>
+                        <outlet property="loginOutlet" destination="ei2-dV-U7f" id="nsJ-9x-Nkb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -131,14 +134,67 @@
                     <view key="view" contentMode="scaleToFill" id="en3-oo-VSH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maxes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tJ-bC-gP7">
+                                <rect key="frame" x="47" y="103" width="225" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="60"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Log Squat" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DgL-eY-KvE">
+                                <rect key="frame" x="47" y="190" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Log Bench" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2SY-Fk-Mxb">
+                                <rect key="frame" x="47" y="249" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Log Deadlift" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1PK-OC-tRK">
+                                <rect key="frame" x="47" y="310" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Log Clean" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-dH-Ujv">
+                                <rect key="frame" x="47" y="370" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7z-2Y-qfD">
+                                <rect key="frame" x="204" y="262" width="141" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Update">
+                                    <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="submitAction:" destination="6QM-Ct-iU9" eventType="touchUpInside" id="A1l-W6-5aX"/>
+                                    <action selector="submitAction:" destination="CHk-ii-vox" eventType="touchUpInside" id="rpw-tq-mz9"/>
+                                    <action selector="updateAction:" destination="vea-cS-HmZ" eventType="touchUpInside" id="raC-aY-fKj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="G3C-GZ-hfa"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="LRH-xv-kzO"/>
+                    <connections>
+                        <outlet property="benchOutlet" destination="2SY-Fk-Mxb" id="KSa-zv-t4u"/>
+                        <outlet property="cleanOutlet" destination="CJT-dH-Ujv" id="RpG-1c-Mit"/>
+                        <outlet property="deadliftOutlet" destination="1PK-OC-tRK" id="yzS-0h-3A4"/>
+                        <outlet property="squatOutlet" destination="DgL-eY-KvE" id="uss-ga-uF9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PXm-aV-LNZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-16" y="-54"/>
+            <point key="canvasLocation" x="-16.030534351145036" y="-54.225352112676056"/>
         </scene>
         <!--AccountViewController-->
         <scene sceneID="ffd-E4-EiG">
@@ -189,7 +245,7 @@
                                     <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="addedAction:" destination="XmI-KF-qFh" eventType="touchUpInside" id="8BH-oz-v42"/>
+                                    <action selector="addedAction:" destination="XmI-KF-qFh" eventType="touchUpInside" id="DyN-tA-6Fn"/>
                                     <action selector="submitAction:" destination="6QM-Ct-iU9" eventType="touchUpInside" id="0oz-wx-l3T"/>
                                     <action selector="submitAction:" destination="CHk-ii-vox" eventType="touchUpInside" id="8hs-Cj-AzN"/>
                                 </connections>
@@ -224,6 +280,62 @@
                     <view key="view" contentMode="scaleToFill" id="IkE-st-mkb">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select Workout Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aHB-jO-jB6">
+                                <rect key="frame" x="81" y="137" width="230" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Selected Plan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o13-k7-Xa8">
+                                <rect key="frame" x="72" y="424" width="230" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day of the Week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L08-DQ-vIU">
+                                <rect key="frame" x="72" y="519" width="230" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="20"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5TL-4O-BRJ">
+                                <rect key="frame" x="-9" y="137" width="393" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsN-xT-GbG">
+                                <rect key="frame" x="276" y="516" width="51" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.right.fill" catalog="system"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pK4-zD-hu5">
+                                <rect key="frame" x="0.0" y="549" width="393" height="281"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="sGz-Iq-kOD">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGz-Iq-kOD" id="C4G-7B-wHk">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5q8-o4-tRE">
+                                <rect key="frame" x="49" y="516" width="51" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowshape.backward.fill" catalog="system"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="76P-MF-NhK"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -232,7 +344,8 @@
                         <outlet property="daysOutlet" destination="hwm-xP-dkD" id="JDq-eX-or9"/>
                         <outlet property="goalOutlet" destination="aH5-Bf-gID" id="gIU-F5-0o8"/>
                         <outlet property="maintenanceLabel" destination="g0R-G2-KxT" id="xFt-GS-GTc"/>
-                        <outlet property="pickerOutlet" destination="ek2-nl-jFe" id="yVe-Lh-1Is"/>
+                        <outlet property="pickerOutlet" destination="5TL-4O-BRJ" id="rU6-0d-l8C"/>
+                        <outlet property="selectedLabel" destination="o13-k7-Xa8" id="qiv-we-r0U"/>
                         <outlet property="weightOutlet" destination="OXX-K6-aEh" id="wzk-9c-XvP"/>
                     </connections>
                 </viewController>
@@ -356,8 +469,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.backward.fill" catalog="system" width="128" height="104"/>
+        <image name="arrowshape.right.fill" catalog="system" width="128" height="104"/>
         <image name="images-removebg-preview" width="225" height="225"/>
         <image name="incline-bench-press-256x256-removebg-preview" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
