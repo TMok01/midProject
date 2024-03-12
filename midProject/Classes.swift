@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+
 public class User{
     
     var name: String
